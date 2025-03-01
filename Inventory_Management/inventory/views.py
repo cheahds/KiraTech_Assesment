@@ -16,7 +16,7 @@ def inventory_home(Request: WSGIRequest):
     return render(Request, 'inventory/inventory-home.html', {'inventory_data': inventory_data})
 
 
-def inventory_detail(request, id):
-    inventory_item = get_object_or_404(models.Inventory, id=id)
+def inventory_detail(Request: WSGIRequest, id: int):
 
-    return render(request, 'inventory/inventory-detail.html', {'inventory_item': inventory_item})
+    inventory_item = get_object_or_404(models.Inventory, id=id)
+    return render(Request, 'inventory/inventory-detail.html', {'inventory_item': inventory_item})
