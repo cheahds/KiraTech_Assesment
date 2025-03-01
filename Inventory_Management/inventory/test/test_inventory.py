@@ -13,10 +13,10 @@ def test_inventory_home_status():
 
     assert response.status_code == 200
 
-
+@pytest.mark.django_db
 def test_api_inventory_home_status():
     api_client = APIClient()
-    url = reverse('inventory-home')
+    url = reverse('inventory-list')
     response = api_client.get(url)
 
     assert response.status_code == 200

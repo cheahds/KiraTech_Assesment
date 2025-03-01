@@ -9,7 +9,6 @@ from configs import CONFIGS
 def inventory_home(Request: WSGIRequest):
     name_query = Request.GET.get('name', '')
     api_url = f'http://{CONFIGS.API_HOSTNAME}:{CONFIGS.API_PORT}/api/inventory/'
-    print(api_url)
     query_path = {'name': name_query}
 
     response = requests.get(api_url, params=query_path)
