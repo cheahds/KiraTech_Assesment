@@ -1,0 +1,10 @@
+{% extends "inventory/base.html" %}
+{% block contents %}
+    <h1>{{ inventory_item.name }}</h1>
+    <img class="img-thumbnail" src="#" alt="Thumbnail image">
+    <p><strong>Description:</strong> {{ inventory_item.description }}</p>
+    <p><strong>Note:</strong> {{ inventory_item.note }}</p>
+    <p><strong>Stock:</strong> {{ inventory_item.stock }}</p>
+    <p><strong>Availability:</strong> {% if inventory_item.availability %}In Stock{% else %}Out of Stock{% endif %}</p>
+    <p><strong>Supplier:</strong> {{ inventory_item.supplier.name }}</p>
+{% endblock contents %}

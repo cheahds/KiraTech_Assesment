@@ -1,0 +1,13 @@
+{% extends "inventory/base.html" %}
+{% block contents %}
+{% for item in inventory_data %}
+    <li>
+        <strong>{{ item.name }}</strong> |
+        Supplier: <strong>{{ item.supplier_name }}</strong> |
+        Availability: {% if item.availability %}<strong>In Stock</strong>{% else %}<strong>Out of Stock</strong>{% endif %} 
+    </li>
+{% empty %}
+    <li>No inventory items found.</li>
+{% endfor %}
+
+{% endblock contents %}

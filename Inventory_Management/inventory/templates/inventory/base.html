@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'inventory/main.css' %}">
+        
+        {% if inventory_item %}
+        <title>{{ inventory_item.name }} - Inventory Details</title>
+        {% elif inventory_data %}
+        <title>Inventory Home</title>
+        {% endif %}
+
+    </head>
+    <body>
+        {% block contents %}
+
+        {% endblock contents %}
+  
+    </body>
+</html>
