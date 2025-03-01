@@ -26,7 +26,7 @@ def test_api_inventory_home_status():
                          [(1, 200),
                           (999, 404)
                           ])
-def test_api_inventory_detail_status(test_input, test_output):
+def test_inventory_detail_status(test_input, test_output):
     supplier = Supplier.objects.create(name="Supplier A")
     if test_input == 1:
         _ = Inventory.objects.create(
